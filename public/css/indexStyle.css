@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #E26013, #a4170d);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #E26013;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 2%;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #ffffff33;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+}
+
+.item {
+  background-color: #232128;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05), 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #444;
+  color: #E26013;
+}
+
+.navbar {
+  background-color: #232128;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.item:nth-child(1),
+.item:nth-child(4) {
+  width: 100%;
+}
+
+.item:nth-child(2) {
+  width: 25%;
+}
+
+.item:nth-child(3) {
+  flex-grow: 1;
+}
+
+.itemJuegos {
+  background-color: #232128;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.slice h3{
+  border-bottom: 2px solid #E15F13;
+}
+
+h3.centrado {
+  text-align: center;
+  background: linear-gradient(to bottom, #E26013, #a4170d);
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.portada {
+  height: auto;
+  max-height: 210px;
+  width: 140px;
+  border: 2px red solid;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portada:hover {
+  transform: scale(1.05);
+}
+
+.centrar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.centrar a {
+  margin: 5px;
+}
+
+/* Botón "Ver más" */
+.itemJuegos a:last-child {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #ff8c42;
+  font-weight: bold;
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+  .item:nth-child(2),
+  .item:nth-child(3) {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portada {
+    width: 100px;
+    height: auto;
+  }
+
+  h3.centrado {
+    font-size: 1rem;
+  }
+
+  .itemJuegos a:last-child {
+    font-size: 0.9rem;
+  }
+}

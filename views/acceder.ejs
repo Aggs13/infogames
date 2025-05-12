@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resourses/css/acceder.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu-container">
+
+    </div>
+    <div class="menu-box">
+        <h3>Iniciar Sesion</h3>
+        <form action="/acceder/iniciar" method="post">
+            <label for="nombreIniciar">Usuario</label>
+            <input type="text" id="nombreIniciar" name="nombreIniciar" required>
+            <br>
+            <label for="passIniciar">Password</label>
+            <input type="password" id="passIniciar" name="passIniciar" required>
+            <br>
+            <input type="submit" value="Acceder">
+        </form>
+    </div>
+    <div class="menu-box">
+        <h3>Registrarse</h3>
+        <form action="/acceder/registro" method="post">
+            <label for="nombreRegis">Usuario</label>
+            <input type="text" id="nombreRegis" name="nombreRegis" required>
+            <br>
+            <label for="emailRegis">Gmail</label>
+            <input type="email" id="emailRegis" name="emailRegis" required>
+            <br>
+            <label for="passRegis">Password</label>
+            <input type="password" id="passRegis" name="passRegis" required>
+            <br>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</body>
+</html>

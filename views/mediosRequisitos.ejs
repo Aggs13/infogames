@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resourses/css/tljStyle.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Medios Requisitos</h1>
+        <div class="galeria">
+
+<% juegosMed.forEach(function(juego){ %>
+    <div  class="tarjeta-juego">
+        <a href="/juego/<%= juego.url_juego %>/<%= juego.id_juego %>"> <img src="/<%= juego.portadaPath_juego %>" alt=""></a>
+    
+        <h3><%= juego.titulo_juego %></h3> 
+    </div>
+
+<%})%>
+</div>
+</div>
+</body>
+</html>

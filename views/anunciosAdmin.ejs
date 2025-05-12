@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/AnunciosAdmin" method="POST" enctype="multipart/form-data">
+
+        <label for="imgAnuncio">Imagen</label>
+        <input type="file" name="imgAnuncio" id="imgAnuncio">
+        <br>
+
+        <label for="titulo">Titulo</label>
+        <input type="text" name="titulo" id="titulo">
+        <br>
+
+        <label for="texto">Texto</label>
+        <br>
+        <textarea name="texto" id="texto" style="height: 250px; width: 550px;"></textarea>
+        <br>
+
+        <input type="submit" name="" id="" value="Subir">
+    </form>
+
+    <div>
+
+
+        <% anuncios.forEach(function(anuncio){ %>
+            <img src="<%= anuncio.imgpath_anuncio %>" alt="" width="150px" height="100px">
+            <a href="/AnunciosAdmin/eliminar/<%= anuncio.id_anuncio %>">Eliminar</a>
+            <br>
+        <% }) %>
+
+    </div>
+    
+</body>
+</html>

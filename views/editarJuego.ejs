@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/JuegosAdmin/editar/<%= idJuego %>" method="post">
+        <label for="titulo">titulo</label>
+        <input type="text" name="titulo" id="titulo" value="<%= titulo %>">
+        <br>
+
+
+        <label for="descripcion">Descripcion</label>
+        <br>
+        <textarea name="descripcion" id="descripcion"  rows="10" cols="80"><%= descripcion %></textarea>
+        <br>
+
+        <label for="nota">Nota</label>
+        <input type="text" name="nota" id="nota" value="<%= nota %>">
+        <br>
+
+        <h5>Ponga todo en minusculas</h5>
+
+        <label for="categoria">Categoria</label>
+        <select name="categoria" id="categoria">
+            <option value="<%= categoria %>"><%= categoria %></option>
+            <option value="Accion">Accion</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Conduccion">Conduccion</option>
+            <option value="Estrategia">Estrategia</option>
+            <option value="Horror">Horror</option>
+            <option value="Plataformas">Plataformas</option>
+            <option value="Rol_y_RPG">Rol y RPG</option>
+            <option value="Simulador">Simulador</option>
+            <option value="FPS-Shooter">FPS-SHOOTER</option>
+            <option value="Supervivencia">Supervivencia</option>
+        </select>
+        <br>
+
+        <label for="requisitos">Requsitos</label>
+        <input type="text" name="requisitos" id="requisitos" value="<%= requisitos %>">
+        <br>
+
+        <label for="salida">Año de salida</label>
+        <input type="number" name="salida" id="salida" min="1980" max="<%= new Date().getFullYear() %>" value="<%= salida %>">
+        <br>
+
+        <label for="urlGamePlay">Video del juego</label>
+        <input type="text" name="urlGamePlay" id="urlGamePlay" value="<%= urlGamePlay %>">
+        <br>
+
+        <input type="submit" id="" value="Editar">
+    </form>
+</body>
+</html>

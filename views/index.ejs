@@ -1,0 +1,123 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/resourses/css/indexStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+        <link rel="icon" href="/resourses/img/icon.png" type="image/png">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="item navbar">
+                <i class="fa-solid fa-gamepad" style="color: #990000;"></i>
+                <a href="/todos_los_juegos">| Todos los Juegos</a>
+                
+                <% if(!sesion){ %>
+                    <a href="/acceder">| Acceder |</a>  
+                <%}else{%>
+                    <a href="">| <%= nombreUsuario %></a>
+                    <a href="/cerrarSesion/<%=idUsuario%>">| Cerrar Sesion</a>
+                <%}%>
+            </nav>
+            
+            <div class="item">
+                <div class="slice">
+                    <h3>CATEGORIAS</h3>
+                    <a href="/categoria/accion">Accion</a>
+                    <br>
+                    <a href="/categoria/aventura">Aventura</a>
+                    <br>
+                    <a href="/categoria/conduccion">Conduccion</a>
+                    <br>
+                    <a href="/categoria/estrategia">Estrategia</a>
+                    <br>
+                    <a href="/categoria/horror">Horror</a>
+                    <br>
+                    <a href="/categoria/plataformas">Plataformas</a>
+                    <br>
+                    <a href="/categoria/rol_y_rpg">Rol y RPG</a>
+                    <br>
+                    <a href="/categoria/simulador">Simulador</a>
+                    <br>
+                    <a href="/categoria/fps-shooter">FPS-Shooter</a>
+                    <br>
+                    <a href="/categoria/superviviencia">Supervivencia</a>
+                    <br>
+                </div>
+                <div>
+                    <h3>ANUNCIOS</h3>
+                    <% let contAnuncios = 0 %>
+                    <% anuncios.forEach(function(anuncio){ %>
+                        <% if(contAnuncios < 3){ %>
+                            <img src="/<%= anuncio.imgpath_anuncio %>" alt="" height="100px" width="150px">
+                            <br>
+                            <a href="" style="font-size: 10px;"><%= anuncio.titulo_anuncio %></a>
+                            <% contAnuncios++ %>
+                        <% } %>
+                   <% }) %>
+                </div>
+            </div>
+            <div class="item">
+                
+
+                <% let contAgregadosRecien = 0 %>
+                <div class="itemJuegos">
+                    <h3 class="centrado" >Agregados Recientemente (PC)</h3>
+                    <div class="centrar">
+                        <% juegos.forEach(function(juego){ %>
+                            <% if(contAgregadosRecien < 5){ %>
+                                <a href="/juego/<%= juego.url_juego %>/<%=juego.id_juego%>"><img src="/<%= juego.portadaPath_juego %>" alt="" class="portada"></a>
+                                <% contAgregadosRecien++ %>
+                            <% } %>
+                            
+                        <% }) %>
+                    </div>
+                    <a href="/todos_los_juegos">Ver mas</a>
+                </div>
+
+                
+                
+                <% let contJuegosMed = 0 %>
+                <div class="itemJuegos">
+                <h3  class="centrado">Medios Requisitos</h3>
+                <div class="centrar">
+
+                    <% juegos.forEach(function(juego){ %>
+                    <% if(juego.requisitos_juego == "medios" && contJuegosMed < 5){ %>
+                        <a href="/juego/<%= juego.url_juego %>/<%=juego.id_juego%>"><img src="/<%= juego.portadaPath_juego %>" alt="" class="portada"></a>
+                        <% contJuegosMed++ %>
+                    <% } %>
+                <% }) %>
+
+                </div>
+
+                <br>
+                <a href="/Requisitos/Medios">Ver mas</a>
+                </div>
+
+
+
+                <% let contJuegosBaj = 0 %>
+                <div class="itemJuegos">
+                <h3 class="centrado">Bajos Requisitos</h3>
+                <div class="centrar">
+                    <% juegos.forEach(function(juego){ %>
+                    <% if(juego.requisitos_juego == "bajos" && contJuegosBaj < 5){ %>
+                        <a href="/juego/<%= juego.url_juego %>/<%=juego.id_juego%>"><img src="/<%= juego.portadaPath_juego %>" alt="" class="portada"></a>
+                        <% contJuegosBaj++ %>
+                    <% } %>
+                <% }) %>
+                </div>
+                
+
+
+                <br>
+                <a href="/Requisitos/Bajos">Ver mas</a>
+            </div>
+            </div>
+            <div class="item">Copyright © 2025</div>
+        </div>
+    </body>
+    </html>

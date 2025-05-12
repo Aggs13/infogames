@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resourses/css/juegoStyle.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container-juego">
+        
+        <div  class="portada-juego">
+            <img src="/<%=juego.portada %>" alt="">
+        </div>
+
+        <div class="info-juego">
+            <h3><%= juego.titulo %></h3>
+            <p> <%= juego.descripcion %> </p>
+            <h3><%= juego.categoria %></h3>
+        </div>
+
+        <div class="capturas-juego">
+            <h2>Capturas</h2>
+            <div class="capturas-grid">
+                <% captura.forEach(function(captura){ %>
+                    <img src="/<%= captura.path_captura %>" alt="">
+                <% }) %>
+            </div>
+
+        </div>
+
+        <div  class="video-juego">
+            <iframe src="<%=juego.urlGamePlay %>" frameborder="0" width="560" height="315"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+            </iframe>
+        </div>
+    </div>
+
+</body>
+</html>

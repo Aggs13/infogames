@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/juegosAdmin/captura/<%= idJuego %>" method="post" enctype="multipart/form-data">
+        <input type="file" name="capturaImg" id="capturaImg" required>
+        <input type="submit" value="Subir">
+    </form>
+
+    <div>
+        <%capturas.forEach(function(captura){ %>
+            <img src="/<%= captura.path_captura%>" alt="">
+            <a href="/juegosAdmin/captura/eliminar/<%= captura.id_captura %>">eliminar</a>
+            <br>
+        <% }) %>
+    </div>
+
+</body>
+</html>
